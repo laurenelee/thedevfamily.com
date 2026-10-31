@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://thedevfamily.com" />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23F28C3A'/><text x='16' y='22' font-family='monospace' font-size='16' font-weight='700' text-anchor='middle' fill='%231c1917'>df</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23104E58'/><text x='16' y='22' font-family='monospace' font-size='16' font-weight='700' text-anchor='middle' fill='%23FBF6EC'>df</text></svg>"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -25,25 +25,29 @@
     />
     <style>
       :root {
-        --bg: #fbf6ef;
-        --ink: #1c1917;
-        --muted: #6b625a;
-        --rule: #e7dccd;
-        --accent: #f28c3a;
-        --accent-ink: #9a4a0b;
+        --bg: #fbf6ec;
+        --ink: #104e58;
+        --muted: #3d6870;
+        --rule: #e0d3bc;
+        --accent: #e28f3c;
+        --accent-ink: #104e58;
         --card: #ffffff;
+        --cta-bg: #104e58;
+        --cta-ink: #fbf6ec;
         --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
         --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
       }
       @media (prefers-color-scheme: dark) {
         :root {
-          --bg: #171412;
-          --ink: #f3ece3;
-          --muted: #a89e93;
-          --rule: #2e2824;
-          --accent: #f59e52;
-          --accent-ink: #f7b57a;
-          --card: #1f1b18;
+          --bg: #0b3138;
+          --ink: #f2e9d7;
+          --muted: #abb2c6;
+          --rule: #1e4a52;
+          --accent: #e28f3c;
+          --accent-ink: #f3b47c;
+          --card: #104e58;
+          --cta-bg: #e28f3c;
+          --cta-ink: #0b3138;
         }
       }
       * {
@@ -110,16 +114,16 @@
         display: inline-block;
         margin-top: 10px;
         padding: 12px 18px;
-        background: var(--accent);
-        color: #1c1917;
+        background: var(--cta-bg);
+        color: var(--cta-ink);
         font-family: var(--mono);
         font-weight: 600;
         text-decoration: none;
         border-radius: 8px;
       }
       .cta:hover {
-        filter: brightness(1.05);
-        color: #1c1917;
+        filter: brightness(1.1);
+        color: var(--cta-ink);
       }
       .grid {
         display: grid;
