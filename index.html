@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Dev Family</title>
+    <meta
+      name="description"
+      content="Fractional developer relations from Lauren Lee and Aaron Bassett. Ecosystem launches, verified AI developer tooling, hackathon programs, and senior DevRel leadership by the day."
+    />
+    <meta property="og:title" content="The Dev Family" />
+    <meta
+      property="og:description"
+      content="Fractional developer relations from Lauren Lee and Aaron Bassett."
+    />
+    <meta property="og:url" content="https://thedevfamily.com" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23F28C3A'/><text x='16' y='22' font-family='monospace' font-size='16' font-weight='700' text-anchor='middle' fill='%231c1917'>df</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fbf6ef;
+        --ink: #1c1917;
+        --muted: #6b625a;
+        --rule: #e7dccd;
+        --accent: #f28c3a;
+        --accent-ink: #9a4a0b;
+        --card: #ffffff;
+        --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+        --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #171412;
+          --ink: #f3ece3;
+          --muted: #a89e93;
+          --rule: #2e2824;
+          --accent: #f59e52;
+          --accent-ink: #f7b57a;
+          --card: #1f1b18;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 17px/1.6 var(--sans);
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 56px 20px 80px;
+      }
+      a {
+        color: var(--accent-ink);
+        text-underline-offset: 3px;
+      }
+      a:hover {
+        color: var(--ink);
+      }
+      .mono,
+      h1,
+      h2,
+      .label {
+        font-family: var(--mono);
+      }
+      h1 {
+        font-size: clamp(30px, 6vw, 44px);
+        line-height: 1.15;
+        margin: 0 0 6px;
+        letter-spacing: -0.5px;
+      }
+      h1 .hash,
+      h2 .hash {
+        color: var(--accent);
+      }
+      .tag {
+        font-family: var(--mono);
+        color: var(--muted);
+        margin: 0 0 28px;
+        font-size: 15px;
+      }
+      .lede {
+        font-size: clamp(20px, 3.2vw, 24px);
+        line-height: 1.45;
+        margin: 0 0 18px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 56px 0 18px;
+        padding-top: 20px;
+        border-top: 1px solid var(--rule);
+      }
+      p {
+        margin: 0 0 14px;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 12px 18px;
+        background: var(--accent);
+        color: #1c1917;
+        font-family: var(--mono);
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 8px;
+      }
+      .cta:hover {
+        filter: brightness(1.05);
+        color: #1c1917;
+      }
+      .grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 640px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-radius: 10px;
+        padding: 18px 18px 8px;
+      }
+      .card h3 {
+        font-family: var(--mono);
+        font-size: 15px;
+        margin: 0 0 8px;
+      }
+      .card p {
+        font-size: 15.5px;
+      }
+      .feature {
+        border: 2px solid var(--accent);
+        padding: 20px 20px 10px;
+      }
+      .feature ul {
+        margin: 0 0 14px;
+        padding-left: 20px;
+        font-size: 16px;
+      }
+      .feature li {
+        margin-bottom: 6px;
+      }
+      .price {
+        font-family: var(--mono);
+        color: var(--accent-ink);
+        font-size: 15px;
+      }
+      .fine {
+        font-size: 14.5px;
+        color: var(--muted);
+      }
+      .work {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .work li {
+        padding: 16px 0;
+        border-bottom: 1px dashed var(--rule);
+      }
+      .work li:last-child {
+        border-bottom: 0;
+      }
+      .work .who {
+        font-family: var(--mono);
+        font-weight: 600;
+      }
+      .work .when {
+        font-family: var(--mono);
+        color: var(--muted);
+        font-size: 14px;
+        margin-left: 6px;
+      }
+      .work p {
+        margin: 6px 0 0;
+        font-size: 16px;
+      }
+      .num {
+        font-family: var(--mono);
+        font-weight: 600;
+      }
+      .logos {
+        font-family: var(--mono);
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .people {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 640px) {
+        .people {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .person a.md {
+        font-family: var(--mono);
+        font-weight: 600;
+      }
+      footer {
+        margin-top: 64px;
+        padding-top: 18px;
+        border-top: 1px solid var(--rule);
+        color: var(--muted);
+        font-size: 14px;
+        font-family: var(--mono);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1><span class="hash">#</span> The Dev Family</h1>
+        <p class="tag">
+          Fractional developer relations · Lauren Lee and Aaron Bassett
+        </p>
+        <p class="lede">
+          We build developer ecosystems and the AI tooling that keeps them
+          running, then hand both to your team.
+        </p>
+        <p>
+          Between us we've led developer relations at Parity, the Midnight
+          Foundation, New Relic, Vonage, Puppet, and MongoDB, and taught on the
+          faculty of the Polkadot Blockchain Academy. We take a small number of
+          engagements at a time, scoped and billed by the day.
+        </p>
+        <a
+          class="cta"
+          href="mailto:hello@thedevfamily.com?subject=Working%20together"
+          >hello@thedevfamily.com</a
+        >
+      </header>
+
+      <section>
+        <h2><span class="hash">##</span> Start with a two-week audit</h2>
+        <div class="card feature">
+          <p class="price">
+            <span class="num">$12,000</span> · fixed scope · 10 business days
+          </p>
+          <p>
+            We find where developers and their coding agents stall on your
+            platform, then give you the plan to fix it.
+          </p>
+          <ul>
+            <li>
+              A cold run of your quickstart by an engineer and by an AI coding
+              agent, with every failure point logged
+            </li>
+            <li>
+              A friction report on docs, onboarding, and support channels,
+              ranked by how many builders each issue stops
+            </li>
+            <li>
+              A review of your hackathons, programs, and community against the
+              numbers we've hit before
+            </li>
+            <li>A metrics baseline you can track every month after we leave</li>
+            <li>A live readout with your team and a 90-day plan</li>
+          </ul>
+          <p class="fine">
+            From you: one technical contact, access to docs and repos, and two
+            hours of founder time. The full fee credits toward any engagement
+            booked within 30 days.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="hash">##</span> Engagements</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Ecosystem launch</h3>
+            <p>
+              Strategy, docs, developer programs, and the metrics to prove them,
+              for a platform heading toward its first thousand builders.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Verified AI developer tooling</h3>
+            <p>
+              Coding agents get young stacks wrong. We build the plugins and
+              skills that make them write code that compiles, executes, and runs
+              end to end on your network.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Hackathons and programs</h3>
+            <p>
+              Event strategy, consistent judging, and build harnesses that raise
+              the share of submissions that actually run.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Fractional DevRel leadership</h3>
+            <p>
+              Senior leadership two days a week while you hire, including
+              scoping the team that sits behind your first DevRel hire.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="hash">##</span> Selected work</h2>
+        <ul class="work">
+          <li>
+            <span class="who">Midnight Foundation</span
+            ><span class="when">2024 to 2026</span>
+            <p>
+              Built developer relations from zero for a privacy-first
+              blockchain. In six months, tracked repos grew from
+              <span class="num">91</span> to <span class="num">1,940</span> and
+              deployments from <span class="num">532</span> to
+              <span class="num">6,918</span>. Hackathon compile rates went from
+              <span class="num">10%</span> at the first event to
+              <span class="num">64%</span> across an MLH series.
+            </p>
+          </li>
+          <li>
+            <span class="who">Midnight Expert</span
+            ><span class="when">open source</span>
+            <p>
+              <span class="num">16</span> Claude Code plugins and
+              <span class="num">102</span> skills that verify generated code
+              five ways, reaching <span class="num">17</span> AI environments.
+              It cut the cost of building a reference application from about
+              <span class="num">$30,000</span> to about
+              <span class="num">$2,000</span>.
+            </p>
+          </li>
+          <li>
+            <span class="who">Parity Technologies</span
+            ><span class="when">Polkadot</span>
+            <p>
+              Built technical education for the Polkadot ecosystem, including
+              writing and teaching the smart contracts module at the Polkadot
+              Blockchain Academy. Led twelve people across two developer
+              relations teams.
+            </p>
+          </li>
+          <li>
+            <span class="who">Accelerate Polkadot</span
+            ><span class="when">until November 2024</span>
+            <p>
+              Our own Web3 Foundation-funded program for founders building on
+              Polkadot.
+            </p>
+          </li>
+          <li>
+            <span class="who">hackjudge</span
+            ><span class="when">lab project</span>
+            <p>
+              Ran <span class="num">164</span> hackathon submissions in
+              sandboxes. The <span class="num">33</span> that broke at the build
+              step went to AI coding agents, and
+              <span class="num">17</span> came back green with a median change
+              of four lines. Total cost: under <span class="num">$16</span>.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>
+          <span class="hash">##</span> Where we've led developer relations
+        </h2>
+        <p class="logos">
+          Midnight Foundation · Parity Technologies · New Relic · Vonage ·
+          Puppet · MongoDB · Polkadot Blockchain Academy
+        </p>
+      </section>
+
+      <section>
+        <h2><span class="hash">##</span> The people</h2>
+        <div class="people">
+          <div class="card person">
+            <h3>Lauren Lee</h3>
+            <p>
+              Developer relations leader. Ecosystems, programs, curriculum, and
+              the teams that run them.
+            </p>
+            <p><a class="md" href="https://lauren.md">lauren.md</a></p>
+          </div>
+          <div class="card person">
+            <h3>Aaron Bassett</h3>
+            <p>
+              Principal engineer. Developer tooling and agentic systems, with
+              open source shipping since 2007.
+            </p>
+            <p>
+              <a class="md" href="https://aaronbassett.md">aaronbassett.md</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="hash">##</span> Start a conversation</h2>
+        <p>
+          Tell us what you're launching, who it's for, and when it needs to
+          work.
+        </p>
+        <a
+          class="cta"
+          href="mailto:hello@thedevfamily.com?subject=Working%20together"
+          >hello@thedevfamily.com</a
+        >
+      </section>
+
+      <footer>© 2026 The Dev Family LLC</footer>
+    </main>
+  </body>
+</html>
